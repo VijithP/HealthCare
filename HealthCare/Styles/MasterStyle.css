@@ -1,0 +1,287 @@
+﻿.wrapper
+{
+    height:500px;
+}
+
+
+.databox {
+    display: inline-block;
+    width: 100%;
+    height: 65px;
+    padding: 0;
+    font-size: 0;   
+    vertical-align: top;
+    min-width: 130px;
+}
+
+    .databox .databox-left {
+        position: relative;
+        display: inline-block;
+        vertical-align: top;
+        text-align: center;
+        margin: 0;
+        width: 65px;
+        height: 65px;
+        padding: 10px;
+        color: #2dc3e8;
+    }
+
+    .databox .databox-right {
+        position: relative;
+        display: inline-block;
+        vertical-align: top;
+        margin: 0;
+        background-color: white !important;
+        width: -webkit-calc(100% - 65px);
+        width: -moz-calc(100% - 65px);
+        width: calc(100% - 65px);
+        height: 65px;
+        color: #555;
+        padding: 5px 10px;
+    }
+
+    .databox .databox-number {
+        display: block;
+        font-size: 17px;
+        line-height: 26px;
+        margin: 2px;
+        position: relative;
+        font-family: 'Roboto','Lucida Sans','trebuchet MS',Arial,Helvetica;
+    }
+
+    .databox .databox-text {
+        display: block;
+        font-size: 11px;
+        margin: 4px 0 2px;
+        position: relative;
+    }
+
+    .databox .databox-stat.radius-bordered {
+        -webkit-border-radius: 3px;
+        -webkit-background-clip: padding-box;
+        -moz-border-radius: 3px;
+        -moz-background-clip: padding;
+        border-radius: 3px;
+        background-clip: padding-box;
+    }
+
+    .databox .databox-stat {
+        display: inline-block;
+        position: absolute;
+        right: 7px;
+        top: 7px;
+        padding: 2px 5px;
+    }
+
+        .databox .databox-stat .stat-icon.icon-lg {
+            font-size: 16px;
+        }
+
+.bg-themesecondary {
+    background-color: #fb6e52 !important;
+}
+
+.bg-themethirdcolor {
+    background-color: #ffce55 !important;
+}
+
+.bg-themeprimary {
+    background-color: #2dc3e8 !important;
+}
+
+.bg-blueberry {
+    background-color: #6f85bf !important;
+}
+
+#DivInformationDiv {
+    background-color: #eee;
+    padding: 7px 5px;
+}
+
+.databox-img {
+    font-size: 40px !important;
+    color: white;
+    height: 40px !important;
+    width: 40px !important;
+}
+
+.themesecondary {
+    color: #fb6e52 !important;
+}
+
+.themethirdcolor {
+    color: #ffce55 !important;
+}
+
+.themeprimary {
+    color: #2dc3e8 !important;
+}
+
+.theme-blueberry {
+    color: #6f85bf !important;
+}
+
+
+#sidebar {
+    width: 17%;
+    display: inline-block;
+    height: 500px !important;
+    background-color: #dbdcea;
+    float: left;
+}
+
+#MainContainer {
+    width: 83%;  
+    float: right;
+}
+
+#sidebar ul {
+    padding: 4px 0px 2px 0px;
+}
+
+    #sidebar ul li.firstMenu {
+        padding: 10px;
+        list-style: none;
+        border-bottom: 1px solid #fff6f6;
+    }
+
+    #sidebar ul li.secondMenu {
+        padding: 5px 0px 0px 20px;
+    }
+
+.navbar-inverse {
+    background-color: #1e3f71 !important;
+    border-color: #4e82d0 !important;
+}
+
+    .navbar-inverse .navbar-brand {
+        color: #fff8f8 !important;
+        font-size: 20px;
+    }
+
+
+.databox-imgDoc {
+    font-size: 45px !important;
+    color: #bdbdbd;
+    height: 50px !important;
+    width: 50px !important;
+}
+
+
+.page-breadcrumbs{
+    position: relative;
+    background: #f3f3f3;
+    min-height: 36px;
+    line-height: 22px;
+    padding: 0;
+    display: block;
+    z-index: 1;
+    -webkit-box-shadow: 0 2px 4px 0 rgba(0,0,0,.15);
+    -moz-box-shadow: 0 2px 4px 0 rgba(0,0,0,.15);
+    box-shadow: 0 2px 4px 0 rgba(0,0,0,.15);
+}
+
+
+.divClsDashbordDocImg {
+    width: 80%;
+    height: 100px;
+    border: 1px solid #ccc;
+    padding: 25px 70px;
+    margin-top:10px
+}
+.divClsDashboardDet {
+    width: 80%;
+    height: 80px;
+    border: 1px solid #ccc;
+    padding: 5px 10px;
+    background-color: #f3f3f3;
+    text-align: center
+}
+
+.clsDoctorName {
+    font-size: 14px !important;
+    font-weight: 600;
+    color: #888787;
+}
+.divClsDashboardDet {
+    font-size: 12px !important;
+    font-weight: 400;
+    color: #888787;
+}
+.clsContactNumber {
+    font-size: 12px !important;
+    font-weight: 500;
+    color:#2f9d0a;
+}
+
+.clsViewDiv
+{
+    padding:10px !important;
+}
+
+/*table class*/
+table.blueTable {
+    border: 1px solid #1C6EA4;
+    background-color: #EEEEEE;
+    width: 100%;
+    text-align: left;
+    border-collapse: collapse;
+}
+
+    table.blueTable td, table.blueTable th {
+        border: 1px solid #AAAAAA;
+        padding: 3px 2px;
+    }
+
+    table.blueTable tbody td {
+        font-size: 13px;
+    }
+
+    table.blueTable tr:nth-child(even) {
+        background: #E2EFF5;
+    }
+
+    table.blueTable thead {
+        background: #1C6EA4;
+        background: -moz-linear-gradient(top, #5592bb 0%, #327cad 66%, #1C6EA4 100%);
+        background: -webkit-linear-gradient(top, #5592bb 0%, #327cad 66%, #1C6EA4 100%);
+        background: linear-gradient(to bottom, #5592bb 0%, #327cad 66%, #1C6EA4 100%);
+    }
+
+        table.blueTable thead th {
+            font-size: 15px;
+            font-weight: normal;
+            color: #FFFFFF;
+            border-left: 2px solid #D0E4F5;
+        }
+
+            table.blueTable thead th:first-child {
+                border-left: none;
+            }
+
+    table.blueTable tfoot {
+        font-size: 14px;
+        font-weight: bold;
+        color: #FFFFFF;
+        background: #D0E4F5;
+        background: -moz-linear-gradient(top, #dcebf7 0%, #d4e6f6 66%, #D0E4F5 100%);
+        background: -webkit-linear-gradient(top, #dcebf7 0%, #d4e6f6 66%, #D0E4F5 100%);
+        background: linear-gradient(to bottom, #dcebf7 0%, #d4e6f6 66%, #D0E4F5 100%);
+        border-top: 2px solid #444444;
+    }
+
+        table.blueTable tfoot td {
+            font-size: 14px;
+        }
+
+        table.blueTable tfoot .links {
+            text-align: right;
+        }
+
+            table.blueTable tfoot .links a {
+                display: inline-block;
+                background: #1C6EA4;
+                color: #FFFFFF;
+                padding: 2px 8px;
+                border-radius: 5px;
+            }

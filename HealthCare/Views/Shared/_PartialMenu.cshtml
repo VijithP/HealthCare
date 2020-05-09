@@ -1,0 +1,80 @@
+﻿@{ 
+    var menuList = (IEnumerable<HealthCare.Models.Menu>)Session["MenuList"];
+}
+
+<div>
+    <ul>
+        @{foreach (var item in menuList.Where(s => s.MenuParentID == 0).GroupBy(Obj => new { Obj.MenuID }).Distinct().ToList())
+            {
+        <li class="firstMenu">
+            @if (@item.FirstOrDefault().ControllerName == null)
+            {
+
+                <a href="#">
+                    @item.FirstOrDefault().MenuName
+                </a>
+
+            }
+            else
+            {
+                <a href="/@item.FirstOrDefault().ControllerName/@item.FirstOrDefault().ActionName">
+                    @item.FirstOrDefault().MenuName
+                </a>
+
+            }
+
+            <ul>
+                @{foreach (var firstItem in (menuList.Where(s => s.MenuParentID == item.FirstOrDefault().MenuID).ToList()))
+                    {
+                <li class="secondMenu">
+                    @if (@firstItem.ControllerName == null)
+                    {
+
+                        <a href="#">
+                            @firstItem.MenuName
+                        </a>
+
+                    }
+                    else
+                    {
+
+                        <a href="/@firstItem.ControllerName/@firstItem.ActionName">
+                            @firstItem.MenuName
+                        </a>
+
+                    }
+
+                    <ul>
+                        @foreach (var secondItem in (menuList.Where(s => s.MenuParentID == firstItem.MenuID).ToList()))
+                        {
+                        <li  class="secondMenu">
+                            @if (@secondItem.ControllerName == null)
+                            {
+                                <a href="#">
+                                    @secondItem.MenuName
+                                </a>
+
+                            }
+                            else
+                            {
+                                <a href="/@secondItem.ControllerName/@secondItem.ActionName">
+                                    @secondItem.MenuName
+                                </a>
+
+                            }
+
+
+
+                        </li>
+                        }
+                    </ul>
+
+                </li>
+                    }
+                }
+            </ul>
+        </li>
+            }
+        }
+    </ul>
+</div>

@@ -1,0 +1,110 @@
+﻿@model HealthCare.Models.User
+
+@{
+    ViewBag.Title = "Login";
+    Layout = "~/Views/Shared/_LayoutLogin.cshtml";
+}
+
+<style>
+    #DivLogin {
+        width: 300px;
+        height: 300px;
+        border: 1px solid #ccc;        
+        margin-top: 100px;
+        padding: 10px;
+        -webkit-box-shadow: 0 10px 6px -6px #777;
+        -moz-box-shadow: 0 10px 6px -6px #777;
+        box-shadow: 0 10px 6px -6px #777;
+        background: #FFF;
+        display: inline-block;
+    }
+
+    body {
+        background: #ccc
+    }
+
+    .HealthCareText {
+        font-size: 40px;
+    }
+
+    .divImg {
+        height: 110px;
+        width: 140px;
+        /* display: inline-block; */
+        margin: 0 auto;
+    }
+
+    #DivIdHCLogo {
+        margin-top: 100px;
+        padding-top: 50px;
+        box-shadow: 0 10px 6px -6px #777;
+        background: #FFF;
+        display: inline-block;
+        height: 300px;
+        width: 300px;
+    }
+
+    .divText {
+        display: inline-block;
+        color: white;
+        text-shadow: 2px 2px 4px #000000;
+        width: 100%;
+        text-align: center;
+    }
+</style>
+
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    <div class="">
+
+
+        <div id="DivIdHCLogo" class="col-lg-3 col-md-3 col-sm-6 col-xs-12 col-lg-offset-3 col-md-offset-3">
+            <div class="divImg">
+                <img src="~/Content/img/HealthCare.PNG" />
+
+            </div>
+            <div class="divText">
+                <label class="HealthCareText">Health Care</label>
+
+            </div>
+
+        </div>
+
+
+
+        <div id="DivLogin" class="form-horizontal col-lg-offset-0 col-lg-6 col-md-6 col-sm-6 col-xs-12">
+            <h4>Login</h4>
+            <hr />
+            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+            <div class="form-group">
+                @Html.LabelFor(model => model.UserName, htmlAttributes: new { @class = "control-label col-md-4" })
+                <div class="col-md-8">
+                    @Html.EditorFor(model => model.UserName, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.UserName, "", new { @class = "text-danger" })
+                </div>
+            </div>
+            <br />
+            <div class="form-group">
+                @Html.LabelFor(model => model.Password, htmlAttributes: new { @class = "control-label col-md-4" })
+                <div class="col-md-8">
+                    @Html.PasswordFor(model => model.Password, new { @class = "form-control" })
+                    @Html.ValidationMessageFor(model => model.Password, "", new { @class = "text-danger" })
+                </div>
+            </div>
+            <br />
+            <div class="form-group">
+                <div class="col-md-offset-2 col-md-10">
+                    <input type="submit" value="Login" class="btn btn-default" />
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+}
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

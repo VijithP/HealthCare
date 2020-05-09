@@ -1,0 +1,75 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - Health Care</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+    @Styles.Render("~/Styles/MasterStyle.css")
+    <style>
+        .divImg {
+            height: 50px;
+            width: 50px;
+            display: inline;
+            float: left;
+            padding: 4px;
+        }
+
+            .divImg img {
+                height: 40px;
+                width: 40px;
+            }
+
+        footer {
+            box-shadow: inset 0 20px 20px -20px rgba(30, 63, 113, 0.3);
+            text-align: center;
+            text-shadow: 0px 0 2px blue;
+            padding-top: 10px;
+        }
+        
+       
+    </style>
+
+</head>
+<body>
+    <div class="navbar navbar-inverse navbar-fixed-top">
+        <div class="">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <div class="divImg">
+                    <img src="~/Content/img/HealthCare.PNG" />
+                </div>
+                @Html.ActionLink("Health Care", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+            </div>
+
+        </div>
+    </div>
+    <div class="wrapper">
+        <div id="sidebar" class="navbar">
+            @Html.Partial("_PartialMenu")
+        </div>
+        <div id="MainContainer">
+            @RenderBody()
+            <hr />
+        </div>
+    </div>
+
+    <br />
+
+
+
+    <footer>
+        <p class="clsFooterText">&copy; @DateTime.Now.Year - Health Care</p>
+    </footer>
+
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+</body>
+</html>

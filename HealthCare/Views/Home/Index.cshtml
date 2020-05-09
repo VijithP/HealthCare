@@ -1,0 +1,106 @@
+﻿@model IEnumerable<HealthCare.Models.Doctor>
+
+@{
+    ViewBag.Title = "Home";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<div class="page-breadcrumbs">
+    <ul class="breadcrumb" style="margin-bottom:0px !important">
+        <li>
+            <i class="fa fa-home"></i>
+            <a href="#">Home</a>
+        </li>
+    </ul>
+</div>
+
+<div class="">
+    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+        <div class="row" id="DivInformationDiv">
+            <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
+                <div class="databox bg-white radius-bordered">
+                    <div class="databox-left bg-themesecondary">
+
+                        <span class="glyphicon glyphicon-list databox-img" aria-hidden="true"></span>
+                     
+                    </div>
+                    <div class="databox-right">
+                        <span class="databox-number themesecondary">@ViewData["TotalAppointment"]</span>
+                        <div class="databox-text darkgray">TOTAL APPOINTMENT</div>
+                        <div class="databox-stat themesecondary radius-bordered">
+
+                            <i class="stat-icon  icon-lg fa fa-list"></i>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
+                <div class="databox bg-white radius-bordered">
+                    <div class="databox-left bg-themethirdcolor">
+
+                        <span class="glyphicon glyphicon-eye-open databox-img" aria-hidden="true"></span>
+
+                    </div>
+                    <div class="databox-right">
+                        <span class="databox-number themethirdcolor">@ViewData["TotalDoctor"] </span>
+                        <div class="databox-text darkgray">TOTAL DOCTORS</div>
+                        <div class="databox-stat themethirdcolor radius-bordered">
+                            <i class="stat-icon  icon-lg fa fa-tasks"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
+                <div class="databox bg-white radius-bordered">
+                    <div class="databox-left bg-themeprimary">
+
+                        <span class="glyphicon glyphicon-user databox-img" aria-hidden="true"  ></span>
+                       
+
+                    </div>
+                    <div class="databox-right">
+                        <span class="databox-number themeprimary">@ViewData["UserName"]</span>
+                        @*<div class="databox-text darkgray">UserName</div>*@
+                        @Html.ActionLink("Logout", "Logout", "Home", new { area = "" }, new { @class = "btn btn-primary btn-sm" })
+
+                        <div class="databox-stat themeprimary radius-bordered">
+                            <i class="stat-icon  icon-lg fa fa-tasks"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+</div>
+<br />
+<div class="">
+
+    @foreach (var item in Model)
+    {
+
+
+        <div class="col-lg-3 col-sm-3">
+
+            <div class="divClsDashbordDocImg" style="">
+                <span class="glyphicon glyphicon-user databox-imgDoc" aria-hidden="true"></span>
+            </div>
+            <div class="divClsDashboardDet" style="">
+                <label class="clsDoctorName"> Dr. @Html.DisplayFor(modelItem => item.Name) </label>
+                <br />
+                @Html.DisplayFor(modelItem => item.Specification)
+                <br />
+                <label class="clsContactNumber"> (c)  @Html.DisplayFor(modelItem => item.ContactNumber)</label>
+
+            </div>
+
+
+         
+
+        </div>
+
+    }
+
+</div>
